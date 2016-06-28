@@ -178,7 +178,7 @@ $console
 					$UPDATE_QUERY_FIELDS[] = "`" . $table_column['name'] . "` = ?";
 					$UPDATE_EXECUTE_FIELDS[] = "\$data['" . $table_column['name'] . "']";
 
-					if(strpos($table_column['type'], 'text') !== false){
+					if(false && strpos($table_column['type'], 'text') !== false){
 						$EDIT_FORM_TEMPLATE .= "" .
 						"\t\t\t\t\t\t\t\t\t" . "<div class='form-group'>" . "\n" .
 						"\t\t\t\t\t\t\t\t\t" . "    {{ form_label(form." . $table_column['name'] . ") }}" . "\n" .
@@ -275,7 +275,7 @@ $console
 			if($count_externals > 0){
 				$EXTERNALS_FOR_LIST .= "" .
 				"\t\t\t" . "else{" . "\n" .
-				"\t\t\t" . "    \$rows[\$row_key][\$table_columns[\$i]] = \$row_sql[\$table_columns[\$i]];" . "\n" .
+				"\t\t\t" . "    \$rows[\$row_key][\$table_columns[\$i]] = nl2br(\$row_sql[\$table_columns[\$i]]);" . "\n" .
 				"\t\t\t" . "}" . "\n";
 			}
 
